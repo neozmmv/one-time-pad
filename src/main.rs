@@ -39,7 +39,7 @@ fn main() {
 
             let encrypted = crypto::encrypt(&text, &key);
             println!("Mensagem Criptografada: {}", encrypted);
-            return;
+            break;
         } else if option == 2 {
             println!("Digite a mensagem a ser descriptografada: ");
             std::io::stdin() // lê o input
@@ -57,7 +57,7 @@ fn main() {
 
             let decrypted = crypto::decrypt(text, &key);
             println!("Mensagem Descriptografada: {}", decrypted);
-            return;
+            break;
         } else if option == 3 {
             println!("Digite a mensagem a ser criptografada: ");
             std::io::stdin() // lê o input
@@ -74,6 +74,7 @@ fn main() {
                     eprintln!("Erro ao gerar chave OTP: {}", e);
                 }
             }
+            break;
         } else if option == 4 {
             println!("Digite a mensagem criptografada em hexadecimal: ");
             std::io::stdin() // lê o input
@@ -94,6 +95,7 @@ fn main() {
                     eprintln!("Erro ao descriptografar: {}", e);
                 }
             }
+            break;
         } else if option == 5 {
             println!("Saindo...");
             break;
