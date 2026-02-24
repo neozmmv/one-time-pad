@@ -86,7 +86,7 @@ fn main() {
                 .read_line(&mut key)
                 .expect("Failed to read line");
             key = key.trim().to_string();
-            let result = crypto::decrypt_otp(text, key);
+            let result = crypto::otp_decrypt(text, key);
             match result {
                 Ok(message) => {
                     println!("Mensagem Descriptografada: {}", message);

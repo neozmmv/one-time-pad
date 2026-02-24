@@ -62,7 +62,7 @@ pub fn otp_encrypt(message: String) -> Result<(String, String), getrandom::Error
     Ok((cipher_hex, key_hex))
 }
 
-pub fn decrypt_otp(cipher_hex: String, key_hex: String) -> Result<String, String> {
+pub fn otp_decrypt(cipher_hex: String, key_hex: String) -> Result<String, String> {
     // converte os hex de volta para bytes
     let cipher_bytes = (0..cipher_hex.len())
         .step_by(2)
