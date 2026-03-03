@@ -12,7 +12,8 @@ fn main() {
         println!("2. Descriptografar com sua própria chave (Vigenère)");
         println!("3. Criptografar com OTP (One-Time Pad)");
         println!("4. Descriptografar com OTP (One-Time Pad)");
-        println!("5. Sair");
+        println!("5. Análise de Frequência (Vigenère)");
+        println!("6. Sair");
         print!("Opção: ");
         std::io::stdout().flush().unwrap(); // garante que o prompt aparece
 
@@ -97,6 +98,14 @@ fn main() {
             }
             break;
         } else if option == 5 {
+            println!("Digite a mensagem criptografada em hexadecimal: ");
+            std::io::stdin() // lê o input
+                .read_line(&mut text)
+                .expect("Failed to read line");
+            text = text.trim().to_string();
+            crypto::break_vigenere(&text);
+            break;
+        } else if option == 6 {
             println!("Saindo...");
             break;
         } else {
